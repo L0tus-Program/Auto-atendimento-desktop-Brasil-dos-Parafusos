@@ -6,7 +6,7 @@
   "scripts": {
     "start": "electron ."
   },
-  "repository": "#",
+  "repository": "https://github.com/L0tus-Program/Auto-atendimento-desktop-Brasil-dos-Parafusos",
   "keywords": [
     "Electron",
     "quick",
@@ -20,6 +20,8 @@
     "electron": "^18.2.3"
   },
   "dependencies": {
+    "jquery": "^3.6.0",
+    "node-powershell": "^5.0.1",
     "update-electron-app": "^2.0.1"
   }
 }

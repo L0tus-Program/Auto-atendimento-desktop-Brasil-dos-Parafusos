@@ -47,3 +47,5 @@ app.on('window-all-closed', function () {
 
 // auto atualizar programa
 require('update-electron-app')()   
+
+
