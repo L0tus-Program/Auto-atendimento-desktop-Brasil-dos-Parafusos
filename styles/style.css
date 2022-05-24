@@ -1,0 +1,176 @@
+
+@font-face { /* importar fonte brasil */
+	font-family: brasil;
+	src: url(fonte/MetalEncasement.ttf);
+}
+
+
+
+.missaovisao {
+    background: url(https://brasildosparafusos.com.br/wp-content/themes/bones/library/images/banner-missao.jpg) no-repeat center center/cover;
+    padding: 60px 0 45px 0;
+	overflow: hidden;
+	font-family: Muli, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	text-align: start;
+}
+
+
+.missaovisao h4{
+	width: 100%;
+    font-size: 11vh;
+    font-style: italic;
+    font-family: "Marianina", sans-serif;
+    color: #373737;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    line-height: 78px;
+    margin-top: 0;
+	font-weight: 700;	
+}
+
+.missaovisao p{
+	font-size: 3vh;
+}
+
+.valores{
+	background: url(../arquivos/lines.png);
+	font-family: Muli, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	line-height: 24px;
+
+}
+
+#titulovalores{
+	height: 103px;
+	/*
+	margin-left: 215px;
+	*/
+	margin-left: 30vh;
+}
+
+#titulovalores h4{
+	width: 100%;
+    font-size: 11vh;
+    font-style: italic;
+    font-family: "Marianina",sans-serif;
+    color: #f5da6b;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    line-height: 78px;
+    margin-top: 0;
+	font-weight: 700;
+}
+
+.valores p{
+	font-size: 3vh;
+	padding-bottom: 5vh;
+	
+}
+
+.valores strong{
+	font-size: 3vh;
+}
+
+.sub{
+	padding-bottom: 250px;
+	font-size: 14px;
+	font-family: Muli, "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+}
+
+.icones{
+	padding-left: 1vh;
+}
+
+/* INICIO VALORES MOBILE */
+
+.valoresmobile{
+	display: none ;
+	background: url(../arquivos/lines.png);
+	font-family: Muli, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	line-height: 24px;
+}
+
+#titulovaloresmobile{
+	height: 103px;
+	/*
+	margin-left: 215px;
+	*/
+	
+}
+
+#titulovaloresmobile h4{
+	width: 100%;
+    font-size: 8vh;
+    font-style: italic;
+    font-family: "Marianina",sans-serif;
+    color: #f5da6b;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    line-height: 78px;
+    margin-top: 0;
+	
+}
+
+
+.valoresmobile p{
+	font-size: 3vh;
+	padding-bottom: 5vh;
+	
+}
+
+.valoresmobile strong{
+	font-size: 3vh;
+}
+
+@media (max-width: 1075px){
+	.valores {
+		display: none;
+	}
+	.valoresmobile{
+		display: block;
+	}
+
+}
+
+/* FIM VALORES MOBILE */
+
+/* INICIO MISSAO E VISAO MOBILE */
+
+.missaovisaomobile {
+    padding: 60px 0 45px 0;
+	overflow: hidden;
+	font-family: Muli, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	text-align: start;
+	display: none ;
+}
+
+.missaovisaomobile h4{
+	width: 100%;
+    font-size: 8vh;
+    font-style: italic;
+    font-family: "Marianina", sans-serif;
+    color: #373737;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    line-height: 78px;
+    margin-top: 0;
+	font-weight: 700;	
+}
+
+.missaovisaomobile p{
+	font-size: 3vh;
+}
+
+@media (max-width: 1075px){
+	.missaovisao {
+		display: none !important;
+	}
+	.missaovisaomobile{
+		display: block;
+	}
+
+}

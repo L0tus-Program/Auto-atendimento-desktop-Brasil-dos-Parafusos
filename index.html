@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">   
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="icon" type="image/ico" href="./arquivos/icone.ico"/>
+    <title>Interno Brasil dos Parafusos</title>
+</head>
+
+<body class="w-100">
+  
+  <header class="mb-5 w-auto"> <!-- LOGO E TÍTULO -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="font-size: 15px; ">
+      <a class="navbar-brand" href="#">
+        <img src="arquivos/brasil-removebg-preview.png" alt="logo Brasil dos Parafusos" width="150pt"></a>
+      <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+          aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavId">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">     
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Arquivos úteis</a>
+            <div class="dropdown-menu" aria-labelledby="dropdownId">
+              <a class="dropdown-item" href="./arquivos/apresentaçao.pdf" target="_blank">Apresentação da Brasil</a>
+              <a class="dropdown-item" href="./arquivos/listadeprodutos.pdf" target="_blank">Mercadorias</a>
+              <a class="dropdown-item" href="./arquivos/FICHA CADASTRO BRASIL DOS PARAFUSOS.pdf" target="_blank">Ficha de Cadastro da Brasil</a>
+              <a class="dropdown-item" href="./arquivos/FICHA CADAS.CLIENTES BRASIL 09.07.20..xlsx" target="_blank">Ficha de Cadastro de clientes</a>
+              <a class="dropdown-item" href="./arquivos/Controle de Itens Inventariados.XLSX" target="_blank">Planilha de controle de itens inventariados (atualizada em 08/11)</a>
+              <a class="dropdown-item" href="https://docs.google.com/presentation/d/1BSKQUR9Kv5Z4wQvL_9W8GMd8AVoo_hi6/edit?usp=sharing&ouid=109658672727356524378&rtpof=true&sd=true" target="_blank">Onboarding Brasil dos Parafusos</a>
+              <a class="dropdown-item" href="./arquivos/PPT - Brasil dos Parafusos.zip" target="_blank">PPT Padrão Brasil dos Parafusos</a>
+              <a class="dropdown-item" href="./arquivos/Programa de PLR - Brasil dos Parafusos.docx 22.docx.pdf" target="_blank">Programa de PLR</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Manuais e instruções</a>
+            <div class="dropdown-menu" aria-labelledby="dropdownId">
+              
+              <a class="dropdown-item" href="./arquivos/curso.pptx" target="_blank">Treinamento SIGER</a>
+              <a class="dropdown-item" href="./arquivos/treinamentoexpedicao.pptx" target="_blank">Treinamento expedição</a>
+              <a class="dropdown-item" href="./arquivos/manuais/Manual Siger.pdf" target="_blank">Manual Oficial SIGER</a>
+              <a class="dropdown-item" href="manualrech\index.html" target="_blank">Manual Básico do SIGER (RECOMENDO ESTE)</a>
+              <a class="dropdown-item" href="./arquivos/manuais/basico.pdf" target="_blank">Manual Básico (EM DESENVOLVIMENTO)</a>
+              <a class="dropdown-item" href="./arquivos/manuais/cadastrodeproduto.pdf" target="_blank">Como cadastrar produtos</a>
+              <a class="dropdown-item" href="https://www.nfe.fazenda.gov.br/portal/consultaRecaptcha.aspx" target="_blank" >Consultar NFE no Sefaz</a>
+              <button type="button" class="btn btn-primary dropdown-item" data-toggle="modal" data-target="#manualbasico">
+                Acessar manual básico do SIGER pelo próprio sistema
+              </button>
+              <button type="button" class="btn btn-primary dropdown-item" data-toggle="modal" data-target="#cancelarseparacao">
+                Cancelar separação de pedido
+              </button>
+              <button type="button" class="btn btn-primary dropdown-item" data-toggle="modal" data-target="#nfcupom">
+                Emitir NF de cupom fiscal
+              </button>
+              <button type="button" class="btn btn-primary dropdown-item" data-toggle="modal" data-target="#pedidointerno">
+                Emitir pedido interno
+              </button>
+              <button type="button" class="btn btn-primary dropdown-item" data-toggle="modal" data-target="#pedidoparcial">
+                Tirar saldo de pedido parcialmente faturado
+              </button>
+              <button type="button" class="btn btn-primary dropdown-item" data-toggle="modal" data-target="#relatoriovendaspedidos">
+                Relatórios de venda por clientes ou produtos (listagem de pedidos faturados)
+              </button>
+              <button type="button" class="btn btn-primary dropdown-item" data-toggle="modal" data-target="#relatoriovendasprodutos">
+                Relatório de vendas por clientes ou produtos (listagem de saida de produtos)
+              </button>
+              <button type="button" class="btn btn-primary dropdown-item" data-toggle="modal" data-target="#nffaturada">
+                Consultar / reenviar NF já faturada
+              </button>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> E-mails</a>
+            <div class="dropdown-menu" aria-labelledby="dropdownId">
+              <a class="dropdown-item" href="mailto:alex@brasildosparafusos.com.br" target="_blank">Alex</a>
+              <a class="dropdown-item" href="mailto:ana@brasildosparafusos.com.br" target="_blank">Ana</a>
+              <a class="dropdown-item" href="mailto:anajulia@brasildosparafusos.com.br" target="_blank">Ana Julia</a>
+              <a class="dropdown-item" href="mailto:daniel@brasildosparafusos.com.br" target="_blank">Daniel</a>
+              <a class="dropdown-item" href="mailto:diego@brasildosparafusos.com.br" target="_blank">Diego</a>
+              <a class="dropdown-item" href="mailto:diogo@brasildosparafusos.com.br" target="_blank">Diogo</a>
+              <a class="dropdown-item" href="mailto:felipe@brasildosparafusos.com.br" target="_blank">Felipe</a>
+              <a class="dropdown-item" href="mailto:fernando@brasildosparafusos.com.br" target="_blank">Fernando</a>
+              <a class="dropdown-item" href="mailto:jeferson@brasildosparafusos.com.br" target="_blank">Jeferson</a>
+              <a class="dropdown-item" href="mailto:financeiro@brasildosparafusos.com.br" target="_blank">Loiva</a>
+              <a class="dropdown-item" href="mailto:franciele@brasildosparafusos.com.br" target="_blank">Franciele</a>
+              <a class="dropdown-item" href="mailto:gustavo@brasildosparafusos.com.br" target="_blank">Gustavo</a>
+              <a class="dropdown-item" href="mailto:laura@brasildosparafusos.com.br" target="_blank">Laura</a>
+              <a class="dropdown-item" href="mailto:leandro@brasildosparafusos.com.br" target="_blank">Leandro</a>
+              <a class="dropdown-item" href="mailto:luciano@brasildosparafusos.com.br" target="_blank">Luciano</a>
+              <a class="dropdown-item" href="mailto:luizromero@brasildosparafusos.com.br" target="_blank">Luiz</a>
+              <a class="dropdown-item" href="mailto:marta@brasildosparafusos.com.br" target="_blank">Marta</a>
+              <a class="dropdown-item" href="mailto:matheus@brasildosparafusos.com.br" target="_blank">Matheus</a>
+              <a class="dropdown-item" href="mailto:paula@brasildosparafusos.com.br" target="_blank">Paula</a>
+              <a class="dropdown-item" href="mailto:rafael@brasildosparafusos.com.br" target="_blank">Rafael</a>
+              <a class="dropdown-item" href="mailto:rudi@brasildosparafusos.com.br" target="_blank">Rudi</a>
+              <a class="dropdown-item" href="mailto:salmo@brasildosparafusos.com.br" target="_blank">Salmo</a>
+              <a class="dropdown-item" href="mailto:tiago@brasildosparafusos.com.br" target="_blank">Tiago</a>
+              <a class="dropdown-item" href="mailto:valeria@brasildosparafusos.com.br" target="_blank">Valeria</a>
+              <a class="dropdown-item" href="mailto:william@brasildosparafusos.com.br" target="_blank">William</a>
+              <a class="dropdown-item" href="mailto:yasmim@brasildosparafusos.com.br" target="_blank">Yasmim</a>
+              <a class="dropdown-item" href="https://webmail-seguro.com.br/brasildosparafusos.com.br/" target="_blank">ACESSO PELO NAVEGADOR (senha : Brasil@01)</a>  
+
+            </div>
+          </li>
+
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">RECH</a>
+            <div class="dropdown-menu" aria-labelledby="dropdownId">
+              <a class="dropdown-item" href="https://www.rech.com.br/download/suporte-remoto" target="_blank">Download Team Viewer</a>
+              <a class="dropdown-item" href="http://www.skype.com/pt-br/download-skype/skype-for-computer/" target="_blank">Download Skype</a>
+              <a class="dropdown-item" href="contatosrech.html" target="_blank">Contatos RECH</a>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Manutenção</a>
+            <div class="dropdown-menu" aria-labelledby="dropdownId">
+              <a class="dropdown-item" href="https://drive.google.com/uc?export=download&id=1veNydX18_E1iqRTaggNAMSji7lwmQOTj" download="impressoras.bat" target="_blank">Instalação de impressoras</a>
+              <a class="dropdown-item" href="https://drive.google.com/uc?export=download&id=1oUmZim0ac7siqDquJ46uHpEzu6XJrn_Q " target="_blank">Instalação do SIGER</a>
+              <a class="dropdown-item" href="./arquivos/Ninite Chrome Foxit Reader JDK AdoptOpenJDK 8 Installer.exe" target="_blank">Programas de uso comum</a>
+              <a class="dropdown-item" href="https://drive.google.com/file/d/1yvd5dCRnUxxKV9IGwp3duafZU2D3NzZb/view?usp=sharing" download ="execute.reg"  target="_blank" role="button" >Desativar Windows Update (baixe e execute este arquivo)</a>
+              <a class="dropdown-item" href="https://drive.google.com/uc?export=download&id=1oUmZim0ac7siqDquJ46uHpEzu6XJrn_Q " target="_blank" role="button" >Instalar o SIGER (baixe e execute o arquivo)</a>           
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">SLA</a>
+            <div class="dropdown-menu" aria-labelledby="dropdownId">
+              <button type="button" class="btn btn-primary dropdown-item" data-toggle="modal" data-target="#explicacaosla">
+                O que é um SLA?
+              </button>
+
+              <button type="button" class="btn btn-primary dropdown-item" data-toggle="modal" data-target="#SLAFinanceiro">
+                SLA Financeiro
+              </button>
+              
+              <button type="button" class="btn btn-primary dropdown-item" data-toggle="modal" data-target="#SLATI">
+                SLA TI
+              </button>     
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pessoas</a>
+            <div class="dropdown-menu" aria-labelledby="dropdownId">
+              <button type="button" class="btn btn-primary dropdown-item" data-toggle="modal" data-target="#financeiro">
+                Financeiro
+              </button>
+              
+              <a class="dropdown-item" href="https://docs.google.com/spreadsheets/d/1LJYytvJ2W_H0-KwWe_wFeXtGcp-y99OxFMGtRY2ahUc/edit?usp=sharing " target="_blank">Descrição de cargos Brasil dos Parafusos 2021</a>
+              
+              <a class="dropdown-item" href="arquivos/Política de Cargos e Salários- Brasil dos Parafusos jan2022.pdf" target="_blank">Política de cargos e salários</a>
+              <a class="dropdown-item" href="https://drive.google.com/file/d/1CC9gkseZERxC9YRNQqde-Xsqp2g6EhH9/view" target="_blank">Programa de PLR - Brasil dos Parafusos</a>
+              <a class="dropdown-item" href="arquivos/Ponto Funcionario.xls" target="_blank">Relógio Ponto</a>        
+            </div>
+          </li>
+
+          <li class="nav-item dropdown dropleft"> <!--Dropleft para abrir menu dropdown para esquerda-->
+            <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Outros</a>
+            <div class="dropdown-menu" aria-labelledby="dropdownId">
+              <a class="dropdown-item" href="mailto:felipe@brasildosparafusos.com.br?subject=Sugestão para o portal" target="_blank" role="button" >Enviar sugestão de melhoria para o portal</a> 
+              <!--<a class="dropdown-item" href="https://app.pipefy.com/public/form/G67Nq9sL" target="_blank" role="button" ">Solicitação de compra de produto</a> -->
+              <a class="dropdown-item" href="http://pw.siger.com.br/bdp/" target="_blank" role="button" >Controle do SIGER MOBILE (Usuário: admin | Senha: administrador)</a> 
+              <a class="dropdown-item" href="https://www.nfe.fazenda.gov.br/portal/disponibilidade.aspx?versao=2.00" target="_blank" role="button" >Sefaz fora do ar?</a> 
+              <button type="button" class="btn btn-primary dropdown-item" data-toggle="modal" data-target="#wifi">
+                Senhas da WIFI
+              </button>
+              <a class="dropdown-item" href="https://www.alphatecrs.com.br" target="_blank" role="button" >Alphatec (telefones)</a> 
+              <a class="dropdown-item" href="http://api.whatsapp.com/send?phone=555133623000" target="_blank" role="button" >Alphatec (whats)</a>
+              <a class="dropdown-item" href="mailto:refripampa@hotmail.com" target="_blank" role="button" >Refrigeração Pampa (Ar condicionado) E-mail</a> 
+              <a class="dropdown-item" href="#" onclick="pampa()" role="button" >Refrigeração Pampa (Ar condicionado) Dados de contato</a>              
+             
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ramais</a>
+            <div class="dropdown-menu" aria-labelledby="dropdownId">
+              <a type="button" class="dropdown-item" data-toggle="modal" data-target="#ramalcomercial" href="#">
+                Ramal Comercial
+              </a>
+              <a type="button" class="dropdown-item" data-toggle="modal" data-target="#ramalestoque" href="#">
+                Ramal Estoque
+              </a>
+              <a type="button" class="dropdown-item" data-toggle="modal" data-target="#ramaladministrativoti" href="#">
+                Ramal Administrativo/TI
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  
+
+
+<section class="missaovisao d-inline-flex">
+  <div class="row">
+    <div class="col-4" >
+      
+    </div>
+    <div class="col-4" >
+      <h4>Missão</h4>
+      <p style="bottom: 0px; opacity: 1;">
+      Oferecer soluções de fixação de forma eficiente, econômica, personalizada e com agilidade, focada na necessidade do cliente.
+      </p>
+    </div>
+    <div class="col-4" >
+      <h4>Visão</h4>
+      <p style="bottom: 0px; opacity: 1;">
+      Ser referência em soluções no mercado de fixação na região Sul, estabelecendo parcerias para o crescimento coletivo com fornecedores, clientes, colaboradores e a comunidade.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<section class="valores mb-5" style="margin-top: 60px;">
+  <div id="titulovalores">
+    <h4>Valores</h4>
+  </div>
+  <div class="row">
+    <div class="col-2">
+      
+    </div>
+
+    <div class="col-2">
+      <strong class="sub">Ética e transparência</strong> <br> <br>
+      <p>Preservando a nossa integridade e estabelecendo relacionamentos duradouros.</p>
+    </div>
+
+    <div class="col-2"> 
+      <strong class="sub">Comprometimento com o cliente</strong> <br> <br>
+      <p>Priorizamos a sua satisfação.</p>
+    </div>
+
+    <div class="col-2 ">
+      <strong class="sub">Sustentabilidade econômica, social e ambiental</strong> <br> <br>
+      <p>A empresa como meio de transformação social.</p>
+    </div>
+
+    <div class="col-2 ">
+      <strong class="sub">Relacionamentos saudáveis, realização e bem-estar</strong> <br> <br>
+      <p>Preservando a união do nosso time e o espírito de equipe.</p>
+    </div>
+  </div>
+  
+</section>
+
+
+<section class="missaovisaomobile flex-column bd-highlight mt-5 mb-5 text-center justify-content-center">
+
+    <div class="p-2 bd-highlight justify-content-center " >
+      <h4>Missão</h4>
+      <p style="bottom: 0px; opacity: 1;">
+      Oferecer soluções de fixação de forma eficiente, econômica, personalizada e com agilidade, focada na necessidade do cliente.
+      </p>
+    </div>
+    <div class="p-2 bd-highlight justify-content-center " >
+      <h4>Visão</h4>
+      <p style="bottom: 0px; opacity: 1;">
+      Ser referência em soluções no mercado de fixação na região Sul, estabelecendo parcerias para o crescimento coletivo com fornecedores, clientes, colaboradores e a comunidade.
+      </p>
+    </div>
+
+</section>
+
+
+
+<div class="valoresmobile flex-column bd-highlight mt-5 mb-5 text-center justify-content-center">
+  <div id="titulovaloresmobile">
+    <h4>Valores</h4>
+  </div>
+  <div class="p-2 bd-highlight justify-content-center "> 
+    <strong class="sub">Ética e transparência</strong> <br> <br>
+    <p>Preservando a nossa integridade e estabelecendo relacionamentos duradouros.</p>
+  </div>
+  <div class="p-2 bd-highlight justify-content-center ">
+    <strong class="sub">Sustentabilidade econômica, social e ambiental</strong> <br> <br>
+    <p>A empresa como meio de transformação social.</p>
+  </div>
+  <div class="p-2 bd-highlight justify-content-center">
+    <strong class="sub">Relacionamentos saudáveis, realização e bem-estar</strong> <br> <br>
+    <p>Preservando a união do nosso time e o espírito de equipe.</p>
+  </div>
+</div>
+<!--
+<iframe width=100%  height='600' src="https://docs.google.com/spreadsheets/d/1hYqx_GgmDd-eNEgBesV-eHOkA_oBbhy-5aGEXWJMx2E/edit#gid=595557207" frameborder="0"></iframe>
+-->
+<!-- 
+ <iframe width="560" height="580" src="https://app.pipefy.com/public/form/G67Nq9sL?embedded=true" frameborder="0"></iframe>
+-->
+
+<!-- Modal SLA TI-->
+<div class="modal fade" id="SLATI" tabindex="-1" role="dialog" aria-labelledby="SLAFinanceiro" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="TituloModalLongoExemplo"><i class="fas fa-slash    "></i> TI</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h3>SLA de atendimento do setor de TI</h3>  
+        <h4>SLA máximo de atendimento de 3 horas para:</h4>
+       <ul>
+         <li>Cadastro de produtos</li>
+         <li>Auxílio com filtros/layouts</li>     
+         <li>Verificação de erros em cadastros do sistema</li>
+         <li>Alteração nas configurações/parâmetros da empresa no sistema (bloqueios, layouts de impressão, rotinas do sistema, etc)</li>
+         
+       </ul>
+       <h4>SLA máximo de atendimento de 2 horas para:</h4>
+       <ul>
+        <li>Problemas gerais com o Windows</li>
+        <li>Problemas de rede (conexão com recursos compartilhados de outros computadores, como pastas compartilhadas e impressoras)</li>
+        <li>Problemas de impressora</li>
+      </ul>
+      <h4>SLA máximo de atendimento de 30 minutos para:</h4>
+       <ul>
+        <li>Problemas de conexão com o servidor</li>
+        <li>Problemas de emissão de pedidos (erros/bugs ou situações anormais)</li>
+      </ul>
+        <h4>Exceções:</h4>
+        <ul>
+          <li>Balcão: Tempo de atendimento pode variar de acordo com o fluxo de clientes</li>
+        </ul>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--Modal SLA FINANCEIRO-->
+<div class="modal fade" id="SLAFinanceiro" tabindex="-1" role="dialog" aria-labelledby="TituloModalLongoExemplo" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="TituloModalLongoExemplo">SLAs Financeiro</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       <h3>SLA de atendimento do setor financeiro</h3>  
+       <h4>SLA máximo de atendimento de 2 horas para:</h4>
+       <ul>
+         <li>Cadastro</li>
+         <li>Confirmação de boleto</li>
+         <li>Confirmação de depósito</li>
+         <li>Liberação de pedido</li>
+         <li>Pendência financeira do cliente</li>
+         <li>Revisão de crédito</li>
+       </ul>
+        
+        <h4>Exceções:</h4>
+        <ul>
+          <li>Consulta ao SPC - 45 minutos</li>
+          <li>Pedidos acima de 5 mil reais - 4 horas</li>
+          <li>Compra de equipamentos - 1 dia</li>
+        </ul>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Modal explicacaosla-->
+
+<div class="modal fade" id="explicacaosla" tabindex="-1" role="dialog" aria-labelledby="TituloModalLongoExemplo" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="TituloModalLongoExemplo">Explicação SLA</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       <h3>O que é um SLA?</h3>  
+       Um Contrato de nível de serviço, ou SLA, é uma medida de comum acordo sobre os tempos de reação e de resolução que uma equipe oferece aos clientes ou colegas. <br>
+       Resumindo, é o prazo máximo de retorno a uma solicitação realizada.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Modal setor financeiro-->
+
+<div class="modal fade" id="financeiro" tabindex="-1" role="dialog" aria-labelledby="TituloModalLongoExemplo" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="TituloModalLongoExemplo">Responsabilidade dos membros do setor financeiro</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       <h3>Funções dos membros do setor financeiro</h3>  
+        <h4>Fernando:</h4>
+        <ul>
+          <li>Identificação da movimentação financeira para a contabilidade</li>
+          <li>Apoio no fechamento da folha de pagamento e comissão</li>
+          <li>Conciliar o balancete junto com a contabilidade</li>
+          <li>Realizar os pagamentos da empresa</li>
+          <li>Controlar o caixa da empresa (dinheiro que fica na empresa)</li>
+          <li>Fechar o caixa da loja</li>
+          <li>Informar os diretores da empresa sobre o fluxo de caixa empresa</li>
+          <li>Atendimento aos serviços de terceiros (banco, consultoria, contabilidade e jurídico )</li>
+          <li>Criação de cadastro de novos fornecedores</li>
+          <li>Suporte ao setor de compras nas dúvidas referente a algum imposto</li>
+          <li>Baixar os pagamentos realizados</li>
+        </ul> 
+        
+        <h4>Loiva:</h4>  
+
+        <ul>
+          <li>Realizar análise de crédito de novos clientes e liberação de aumento para os clientes antigos</li>
+          <li>Criação de cadastro dos novos clientes e atualização dos cliente já ativos</li>
+          <li>Realizar cobrança do clientes inadimplentes (envio de boleto e via telefone)</li>
+          <li>Realizar a entrada das notas de devolução e recusa de cliente, realizando o abatimento nos boletos ou mantendo o valor como crédito</li>
+          <li>Identificar os pagamentos realizados via transferência</li>
+          <li>Fechamento da vendas com os valores a serem pagos de comissão</li>
+          <li>Acompanhar o relógio-ponto dos funcionários</li>
+          <li>Suporte ao setor de vendas como conferência de valores depositados para compras à vista</li>
+          <li>Envio do arquivo com os boletos para o banco</li>
+        </ul>
+        
+
+        <h4>Yasmim: </h4>
+
+        <ul>
+          <li>Renovar o limite de crédito dos clientes antigos - (Consulta ao SPC e liberação de data limite)</li>
+          <li>Realizar as baixas dos boletos pagos</li>
+          <li>Fechamento de caixa da empresa</li>
+          <li>Atendimento a clientes, como envio de segunda via de boleto, nota fiscal XML</li>
+          <li>Atendimento ao serviço de terceiro (banco, contabilidade), coleta de assinaturas, envio dos documentos assinados</li>
+          <li>Envio das vendas diárias para o comercial, financeiro e direção da empresa</li>
+          <li>Controle de atestados e faltas</li>
+          <li>Controle do relógio ponto</li>
+          <li>Pagamentos ao Pessoal</li>
+          <li>Entrega dos contracheques</li>
+          <li>Rotinas administrativas do setor financeiro</li>
+        </ul>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--Testes modal nos manuais-->
+
+<!--Modal Acessar manual basico do SIGER pelo próprio sistema-->
+<div class="modal fade" id="manualbasico" tabindex="-1" role="dialog" aria-labelledby="TituloModalLongoExemplo" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="TituloModalLongoExemplo">Como cancelar a separação de um pedido</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Botão 'Manual básico do SIGER' no canto superior direito da sua tela , irá abrir o manual no navegador. Nele você encontrará as instruções para utilização de quase todas as telas , filtros , relatórios , etc.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--Modal Cancelar separação de pedido-->
+<div class="modal fade" id="cancelarseparacao" tabindex="-1" role="dialog" aria-labelledby="TituloModalLongoExemplo" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="TituloModalLongoExemplo">Como cancelar a separação de um pedido</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Para cancelar a separação do pedido , acessamos o menu 6-6-D do módulo de vendas, você pode filtrar o cancelamento pelo pedido. Em seguida irá apresentar os itens cuja separação será cancelada , selecione os que você quiser e avançe.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Modal Emitir NF de cupom fiscal-->
+
+<div class="modal fade" id="nfcupom" tabindex="-1" role="dialog" aria-labelledby="TituloModalLongoExemplo" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="TituloModalLongoExemplo">Como cancelar a separação de um pedido</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Para emitir NF apartir do cupom , acessar menu FAT 2-3-E
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--MODAL Emitir pedido interno-->
+<div class="modal fade" id="pedidointerno" tabindex="-1" role="dialog" aria-labelledby="TituloModalLongoExemplo" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="TituloModalLongoExemplo">Como cancelar a separação de um pedido</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        No gerenciamento de pedidos, clique no botão Ped.Interno e avance(page down), por favor não altere nada neste menu. Na próxima tela você terá uma visualização do pedido interno. A sua esquerda terá uma série de opções, como imprimir ou enviar por e-mail.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--MODAL Tirar saldo de pedido parcialmente faturado-->
+<div class="modal fade" id="pedidoparcial" tabindex="-1" role="dialog" aria-labelledby="TituloModalLongoExemplo" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="TituloModalLongoExemplo">Como cancelar a separação de um pedido</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        O jeito que a RECH recomenda para se tirar o pedido interno de um saldo é pelo menu FAT 3-6-P , filtre pelo código do pedido , selecione se deseja ou não acumular os itens no pedido interno e avançe. Fora isso , tem o jeito que nós nos acostumamos a fazer , que é pelo botão de pedido interno com seleção na manutenção consolidada dos pedidos, porém este método foi 'abandonado' pela RECH 
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--MODAL Relatórios de venda por clientes ou produtos (listagem de pedidos faturados)-->
+<div class="modal fade" id="relatoriovendaspedidos" tabindex="-1" role="dialog" aria-labelledby="TituloModalLongoExemplo" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="TituloModalLongoExemplo">Como cancelar a separação de um pedido</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        "Acesse o menu FAT 5-3-S , avance , você verá 3 tipos de filtro , pode escolher por pedidos , notas e cupons , você pode marcar todos se quiser. Dentro de cada filtro você poderá selecionar clientes , produtos , período , etc ... Avance , o sistema irá gerar o relatório e você irá escolher a forma de saída (PDF , Excel , arquivo de texto , etc...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--MODAL Relatório de vendas por clientes ou produtos (listagem de saida de produtos)-->
+<div class="modal fade" id="relatoriovendasprodutos" tabindex="-1" role="dialog" aria-labelledby="TituloModalLongoExemplo" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="TituloModalLongoExemplo">Como cancelar a separação de um pedido</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Acesse o menu FAT 5-3-S , avance , você verá 3 tipos de filtro , pode escolher por pedidos , notas e cupons , você pode marcar todos se quiser. Dentro de cada filtro você poderá selecionar clientes , produtos , período , etc ... Avance , o sistema irá gerar o relatório e você irá escolher a forma de saída (PDF , Excel , arquivo de texto , etc...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--MODAL Consultar / reenviar NF já faturada-->
+<div class="modal fade" id="nffaturada" tabindex="-1" role="dialog" aria-labelledby="TituloModalLongoExemplo" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="TituloModalLongoExemplo">Como cancelar a separação de um pedido</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Para reenviar ou consultar notas já faturadas, podemos ir para o menu FAT 2-3-G e selecionar a primeira opção. Ali é só filtrar a nota que queremos e , na parte inferior da tela teremos as opções disponíveis para a nota selecionada.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!--modal wifi-->
+
+<div class="modal fade" id="wifi" tabindex="-1" role="dialog" aria-labelledby="TituloModalLongoExemplo" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="TituloModalLongoExemplo">Senhas WIFI</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        expedicao = brasil01 <br>
+        BRASIL = 0017032681 <br>
+        BRASIL DOS PARAFUSOS = brasil01
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Modal de boas-vindas -->
+
+<div class="modal fade" id="bemvindo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Bem-vindo</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <p>Olá, seja muito bem-vindo ao portal interno da Brasil dos Parafusos! 
+              Aqui você irá encontrar todos os dados ,arquivos e informações que irão te ajudar no dia a dia!</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Teste Modal Tabela ramal-->
+
+<div class="modal fade" id="ramalcomercial" tabindex="-1" role="dialog" aria-labelledby="TituloModalLongoExemplo" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="TituloModalLongoExemplo">Ramal Comercial</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <table class="table table-borderless table-dark">
+          <h3 id="tituloramais">Comercial</h3> <!--Tabela comercial-->
+          <thead>
+            <tr>
+              <th scope="col">Nome</th>
+              <th scope="col">Ramal</th>
+              <th scope="col">Direto</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Alex</td>
+              <td>216</td>
+              <td>40669368</td>
+            </tr>
+            <tr>
+              <td>Ana</td>
+              <td>200</td>
+              <td>40669352</td>
+            </tr>
+            <tr>
+              <td>Ana Julia</td>
+              <td>205</td>
+              <td>40669357</td>
+            </tr>
+            <tr>
+              <td>Marta</td>
+              <td>218</td>
+              <td>989544502</td>
+            </tr>
+            <tr>
+              <td>Diogo</td>
+              <td>206</td>
+              <td>40669358</td>
+            </tr>
+            <tr>
+              <td>Diego/Franciele</td>
+              <td>220</td>
+              <td>40669366</td>
+            </tr>
+            <tr>
+              <td>Leandro</td>
+              <td>221</td>
+              <td>40669373</td>
+            </tr>
+            <tr>
+              <td>Luiz</td>
+              <td>212</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Gustavo</td>
+              <td>201</td>
+              <td>40669353</td>
+            </tr>
+            <tr>
+              <td>Paula</td>
+              <td>215</td>
+              <td>40669367</td>
+            </tr>
+            <tr>
+              <td>Rudi</td>
+              <td>207</td>
+              <td>40669059</td>
+            </tr>
+            <tr>
+              <td>Salmo</td>
+              <td>203</td>
+              <td>40669355</td>
+            </tr>
+            <tr>
+              <td>Tiago</td>
+              <td>202</td>
+              <td>40669354</td>
+            </tr>
+            <tr>
+              <td>Paula</td>
+              <td>215</td>
+              <td>40669367</td>
+            </tr>
+            <tr>
+              <td>Valeria</td>
+              <td>204</td>
+              <td>40669356</td>
+            </tr>
+        
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="ramalestoque" tabindex="-1" role="dialog" aria-labelledby="TituloModalLongoExemplo" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="TituloModalLongoExemplo">Bem-vindo</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <table class="table table-borderless table-dark">
+          <h3 id="tituloramais">Estoque</h3> <!--Tabela estoque-->
+          <thead>
+            <tr>
+              <th scope="col">Nome</th>
+              <th scope="col">Ramal</th>
+              <th scope="col">Direto</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Daniel</td>
+              <td>214</td>
+              <td>40669366</td>
+            </tr>
+            <tr>
+              <td>Deposito</td>
+              <td>219</td>
+              <td>40669371</td>
+            </tr>
+            <tr>
+              <td>Daniel (Emissão de NF)</td>
+              <td>222</td>
+              <td>40669371</td>
+            </tr>
+            <tr>
+              <td>Jeferson</td>
+              <td>209</td>
+          
+            </tr>
+            <tr>
+              <td>Mezanino</td>
+              <td>213</td>
+        
+            </tr>
+            <tr>
+              <td>Zincagem</td>
+              <td>208</td>
+              <td>40669360</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="ramaladministrativoti" tabindex="-1" role="dialog" aria-labelledby="TituloModalLongoExemplo" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="TituloModalLongoExemplo">Bem-vindo</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <table class="table table-borderless table-dark">
+          <h3 id="tituloramais">Administrativo/TI</h3> <!--Tabela administrativo/ti-->
+          <thead>
+            <tr>
+              <th scope="col">Nome</th>
+              <th scope="col">Ramal</th>
+              <th scope="col">Direto</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Felipe/Yasmim</td>
+              <td>210</td>
+              <td>40669362</td>
+            </tr>
+            <tr>
+              <td>Fernando</td>
+              <td>211</td>
+              <td>048 984780170</td>
+            </tr>
+            <tr>
+              <td>Loiva</td>
+              <td>217</td>
+              <td>989538091</td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<!--Teste planilha bootstrap-->
+
+<footer class="w-100 page-footer text-center justify-content-center d-inline-flex p-2 bd-highlight" style="z-index: 5; margin-top: 15vh; ">
+  <h5>Versão 2.0 | ©2021</h5>
+    <a class="icones" href="https://www.instagram.com/brasildosparafusos/" target="_blank">
+      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+      <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+      </svg>
+    </a> 
+  <a class="icones" href="http://www.brasildosparafusos.com.br" target="_blank">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-globe" viewBox="0 0 16 16">
+      <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm7.5-6.923c-.67.204-1.335.82-1.887 1.855A7.97 7.97 0 0 0 5.145 4H7.5V1.077zM4.09 4a9.267 9.267 0 0 1 .64-1.539 6.7 6.7 0 0 1 .597-.933A7.025 7.025 0 0 0 2.255 4H4.09zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a6.958 6.958 0 0 0-.656 2.5h2.49zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5H4.847zM8.5 5v2.5h2.99a12.495 12.495 0 0 0-.337-2.5H8.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5H4.51zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5H8.5zM5.145 12c.138.386.295.744.468 1.068.552 1.035 1.218 1.65 1.887 1.855V12H5.145zm.182 2.472a6.696 6.696 0 0 1-.597-.933A9.268 9.268 0 0 1 4.09 12H2.255a7.024 7.024 0 0 0 3.072 2.472zM3.82 11a13.652 13.652 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5H3.82zm6.853 3.472A7.024 7.024 0 0 0 13.745 12H11.91a9.27 9.27 0 0 1-.64 1.539 6.688 6.688 0 0 1-.597.933zM8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855.173-.324.33-.682.468-1.068H8.5zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.65 13.65 0 0 1-.312 2.5zm2.802-3.5a6.959 6.959 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5h2.49zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7.024 7.024 0 0 0-3.072-2.472c.218.284.418.598.597.933zM10.855 4a7.966 7.966 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4h2.355z"/>
+    </svg>
+  </a>
+</footer>
+
+  <script src="./renderer.js"></script>
+
+  <script src="scripts/func.js"></script> <!-- AVISOS -->
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+
+</html>

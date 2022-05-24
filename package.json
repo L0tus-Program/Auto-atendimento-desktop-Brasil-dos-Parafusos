@@ -1,0 +1,25 @@
+{
+  "name": "interno-brasil-dos-parafusos",
+  "version": "1.0.0",
+  "description": "Projeto de sistema para auto atendimento da Brasil dos Parafusos",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "#",
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo"
+  ],
+  "author": "Felipe Gomes",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^18.2.3"
+  },
+  "dependencies": {
+    "update-electron-app": "^2.0.1"
+  }
+}
