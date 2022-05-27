@@ -1,6 +1,6 @@
 import { PowerShell } from 'node-powershell';
 
-PowerShell.$`start chrome`;
+PowerShell.$`start chrome`;  
     
 
 
