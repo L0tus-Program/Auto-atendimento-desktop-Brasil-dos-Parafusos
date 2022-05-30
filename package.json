@@ -1,6 +1,6 @@
 {
   "name": "interno-brasil-dos-parafusos",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Projeto de sistema para auto atendimento da Brasil dos Parafusos",
   "main": "main.js",
   "scripts": {
@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "@electron/remote": "^2.0.8",
+    "electron-log": "^4.4.7",
     "jQuery": "^1.7.4",
     "jquery": "^3.6.0",
     "node-powershell": "^5.0.1",

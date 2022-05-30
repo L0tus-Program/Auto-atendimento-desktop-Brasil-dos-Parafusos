@@ -9,6 +9,21 @@ const mail = require ("./sendmail") //função para envio de e-mail
 const os = require('os')
 
 
+
+
+
+// auto atualizar programa
+//require('update-electron-app')()   
+// inicio forçando update   https://github.com/electron/update-electron-app
+
+require('update-electron-app')({
+  repo: 'https://github.com/L0tus-Program/Auto-atendimento-desktop-Brasil-dos-Parafusos',
+  updateInterval: '5 minutes',
+  logger: require('electron-log')
+})
+// fim forçando update
+
+
 function createWindow () {
   // Create the browser window.
   const icon = nativeImage.createFromPath(`${app.getAppPath()}/build/icone.ico`)
@@ -64,8 +79,7 @@ app.on('window-all-closed', function () {
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
 
-// auto atualizar programa
-require('update-electron-app')()   
+
 
 
 
