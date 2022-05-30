@@ -1,8 +1,8 @@
 // Modules to control application life and create native browser window
 const {app, BrowserWindow, nativeImage} = require('electron')
 const path = require('path')
-const { shell } = require('electron') // testando shell
-const {ipcMain} = require('electron') // testando ipcmain
+const { shell } = require('electron') // comandos com o SO necessitam do módulo shell, me da acesso total ao computador
+const {ipcMain} = require('electron') // testando ipcmain responsável pela comunicação back-front
 //import { PowerShell } from 'node-powershell';
 const {PowerShell} =  require ('node-powershell')
 const mail = require ("./sendmail") //função para envio de e-mail
@@ -73,7 +73,12 @@ app.whenReady().then(() => {
 // for applications and their menu bar to stay active until the user quits
 // explicitly with Cmd + Q.
 app.on('window-all-closed', function () {
-  if (process.platform !== 'darwin') app.quit()
+  
+  if (process.platform !== 'darwin')app.quit()
+
+  //app.hide();    
+
+  
 })
 
 // In this file you can include the rest of your app's specific main process
@@ -102,7 +107,7 @@ ipcMain.on('asynchronous-message', (event, arg) => {
     PowerShell.$`start outlook`;  
   }  
   if (arg == "mail"){  
-    mail.email(os.hostname()) // enviar como parametro o nome do computador
+    mail.email(os.hostname()) // enviar como parametro o nome do computador  
   }
 })
 
