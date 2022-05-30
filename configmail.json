@@ -1,0 +1,9 @@
+{
+    "host": "email-ssl.com.br",   
+    "service": "email-ssl.com.br",
+    "port": 587, 
+    "secure": false, 
+    "user": "contato@brasildosparafusos.com.br",
+    "pass": "Brasil@01"
+
+}

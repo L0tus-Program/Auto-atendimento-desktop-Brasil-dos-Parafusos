@@ -1,25 +1,44 @@
 // Modules to control application life and create native browser window
-const {app, BrowserWindow} = require('electron')
+const {app, BrowserWindow, nativeImage} = require('electron')
 const path = require('path')
+const { shell } = require('electron') // testando shell
+const {ipcMain} = require('electron') // testando ipcmain
+//import { PowerShell } from 'node-powershell';
+const {PowerShell} =  require ('node-powershell')
+const mail = require ("./sendmail") //função para envio de e-mail
+const os = require('os')
 
 
 function createWindow () {
   // Create the browser window.
+  const icon = nativeImage.createFromPath(`${app.getAppPath()}/build/icone.ico`)
+  if (app.dock) {
+    app.dock.setIcon(icon)
+  }
+  
   const mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
     minWidth: 400,
     autoHideMenuBar: true,
+    icon: icon,
     webPreferences: {
-      preload: path.join(__dirname, 'preload.js')
+   
+      preload: path.join(__dirname, 'preload.js'),
+      nodeIntegration: true,
+      contextIsolation: false, // está bloqueando meu jquery -> Devo importar manualmente no func.js ?
+      enableRemoteModule: true,
+      
     }
+    
   })
+  
 
   // and load the index.html of the app.
   mainWindow.loadFile('index.html')
 
   // Open the DevTools.
-  // mainWindow.webContents.openDevTools()
+  //mainWindow.webContents.openDevTools()
 }
 
 // This method will be called when Electron has finished
@@ -48,4 +67,28 @@ app.on('window-all-closed', function () {
 // auto atualizar programa
 require('update-electron-app')()   
 
+
+
+
+ipcMain.on('asynchronous-message', (event, arg) => {
+  console.log(arg)
+
+  // Event emitter for sending asynchronous messages
+  event.sender.send('asynchronous-reply', 'async pong abrindo github')
+  if (arg == "git"){
+    shell.openExternal('https://github.com')
+  }
+  if (arg == "git"){
+    shell.openExternal('https://github.com')
+  }
+  if (arg == "restart"){
+    PowerShell.$`start chrome`;  
+  }
+  if (arg == "outlook"){
+    PowerShell.$`start outlook`;  
+  }  
+  if (arg == "mail"){  
+    mail.email(os.hostname()) // enviar como parametro o nome do computador
+  }
+})
 
