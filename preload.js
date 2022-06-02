@@ -4,25 +4,43 @@
 
 const {ipcRenderer, ipcMain} = require('electron')
 
-
+/*
 function git(){
   ipcRenderer.send('asynchronous-message', 'git')
   
-}
+}*/
 
 function offline(){ //desligar um computador
   ipcRenderer.send('asynchronous-message', 'offline')
 }
 
-function restart(){
-  ipcRenderer.send('asynchronous-message', 'restart')
-}
 
-function outlook(){
-  ipcRenderer.send('asynchronous-message', 'outlook')
-}
 
 function mail(){
   ipcRenderer.send('asynchronous-message', 'mail')
 }
 
+function scannow(){
+  ipcRenderer.send('asynchronous-message', 'scannow')
+}
+
+function installsiger(){
+  ipcRenderer.send('asynchronous-message', 'installsiger')
+}
+
+
+function planilhapedidos(){
+  ipcRenderer.send('asynchronous-message', 'planilhapedidos')
+}
+
+function spooler(){
+  ipcRenderer.send('asynchronous-message', 'spooler')
+}
+
+function outlooktravado(){
+  ipcRenderer.send('asynchronous-message', 'outlooktravado')
+}
+
+function sigertravado(){
+  ipcRenderer.send('asynchronous-message', 'sigertravado')
+}

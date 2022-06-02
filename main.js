@@ -88,26 +88,38 @@ app.on('window-all-closed', function () {
 
 
 
-
+// conexão assincrona com o front
 ipcMain.on('asynchronous-message', (event, arg) => {
   console.log(arg)
 
   // Event emitter for sending asynchronous messages
-  event.sender.send('asynchronous-reply', 'async pong abrindo github')
+  event.sender.send('asynchronous-reply', 'async comando recebido')
+ 
+  /* exemplo usando lib shell do próprio Electron
   if (arg == "git"){
     shell.openExternal('https://github.com')
-  }
-  if (arg == "git"){
-    shell.openExternal('https://github.com')
-  }
-  if (arg == "restart"){
-    PowerShell.$`start chrome`;  
-  }
-  if (arg == "outlook"){
-    PowerShell.$`start outlook`;  
-  }  
+  } */
+  
   if (arg == "mail"){  
     mail.email(os.hostname()) // enviar como parametro o nome do computador  
   }
+  if (arg == "scannow"){
+    PowerShell.$`start bats/sfcscannow.bat`
+  }
+  if (arg == "installsiger"){
+    PowerShell.$`start bats/siger.bat`
+  }  
+  if (arg == "planilhapedidos"){
+    shell.openExternal("https://docs.google.com/spreadsheets/d/13-U161yVldPp4D5pjdCQ8EOVb6nAn8Jd/edit?usp=sharing&ouid=109175798814250508218&rtpof=true&sd=true")
+  }
+  if (arg == "spooler"){
+    PowerShell.$`start bats/spooler.bat`
+  }
+  if (arg == "outlooktravado"){
+    PowerShell.$`start bats/outlooktravado.bat`
+  }  
+  if (arg == "sigertravado"){
+    PowerShell.$`start bats/sigertravado.bat`
+  }  
 })
 
