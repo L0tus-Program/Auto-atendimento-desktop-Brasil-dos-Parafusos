@@ -4,6 +4,11 @@
 
 const {ipcRenderer, ipcMain} = require('electron')
 
+document.addEventListener('DOMContentLoaded', function() {
+  //alert(texto);
+  $('#bemvindo').modal('show');
+}, false);
+
 /*
 function git(){
   ipcRenderer.send('asynchronous-message', 'git')
@@ -44,3 +49,11 @@ function outlooktravado(){
 function sigertravado(){
   ipcRenderer.send('asynchronous-message', 'sigertravado')
 }
+
+
+this.setInterval(pingando,50000)
+
+
+function pingando() {
+  ipcRenderer.send('asynchronous-message', 'pingserver')
+} 

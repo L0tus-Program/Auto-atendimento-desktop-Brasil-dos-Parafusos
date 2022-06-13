@@ -16,11 +16,11 @@ const os = require('os')
 //require('update-electron-app')()   
 // inicio forçando update   https://github.com/electron/update-electron-app
 
-require('update-electron-app')({
+/*require('update-electron-app')({
   repo: 'https://github.com/L0tus-Program/Auto-atendimento-desktop-Brasil-dos-Parafusos',
   updateInterval: '5 minutes',
   logger: require('electron-log')
-})
+})*/
 // fim forçando update
 
 
@@ -87,7 +87,6 @@ app.on('window-all-closed', function () {
 
 
 
-
 // conexão assincrona com o front
 ipcMain.on('asynchronous-message', (event, arg) => {
   console.log(arg)
@@ -103,6 +102,8 @@ ipcMain.on('asynchronous-message', (event, arg) => {
   if (arg == "mail"){  
     mail.email(os.hostname()) // enviar como parametro o nome do computador  
   }
+
+
   if (arg == "scannow"){
     PowerShell.$`start bats/sfcscannow.bat`
   }
@@ -121,5 +122,23 @@ ipcMain.on('asynchronous-message', (event, arg) => {
   if (arg == "sigertravado"){
     PowerShell.$`start bats/sigertravado.bat`
   }  
+  if (arg == "pingserver"){
+    pingando()
+    
+  } 
 })
 
+
+async function pingando () {
+  console.log("pingando")
+  let ping = await PowerShell.$`ping server`
+  if (ping.raw[0]=="A"){ // "A" é a primeira letra do RAW de erro no retorno do comando
+      console.log("Servidor não existe")
+      mail.email(os.hostname())
+
+  }
+  else{
+      console.log("Servidor existe")
+  }
+  
+}
