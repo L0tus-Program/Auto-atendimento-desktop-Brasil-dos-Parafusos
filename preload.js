@@ -51,7 +51,7 @@ function sigertravado(){
 }
 
 
-this.setInterval(pingando,50000)
+this.setInterval(pingando,500000)
 
 
 function pingando() {
