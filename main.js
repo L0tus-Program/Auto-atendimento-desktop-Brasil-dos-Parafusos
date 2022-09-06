@@ -7,6 +7,7 @@ const {ipcMain} = require('electron') // testando ipcmain responsável pela comu
 const {PowerShell} =  require ('node-powershell')
 const mail = require ("./sendmail") //função para envio de e-mail
 const os = require('os')
+const { exec } = require('child_process')
 
 
 
@@ -117,7 +118,15 @@ ipcMain.on('asynchronous-message', (event, arg) => {
     PowerShell.$`start bats/spooler.bat`
   }
   if (arg == "outlooktravado"){
-    PowerShell.$`start bats/outlooktravado.bat`
+    PowerShell.$`powershell -WindowStyle hidden -Command "& {[System.Reflection.Assembly]::LoadWithPartialName('System.Windows.Forms'); [System.Windows.Forms.MessageBox]::Show('Entrou na funcao outlook','WARNING')}"`
+    //PowerShell.$`start ./bats/outlooktravado.bat`
+    const { exec } = require('node:child_process');
+    exec('call bats/outlooktravado.bat');
+
+    
+    
+  
+  // fim if
   }  
   if (arg == "sigertravado"){
     PowerShell.$`start bats/sigertravado.bat`

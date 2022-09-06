@@ -19,7 +19,7 @@
   "author": "Felipe Gomes",
   "license": "CC0-1.0",
   "build": {
-    "asar": true,
+    "asar": false,
     "appId": "Auto Atendimento Brasil"
   },
   "devDependencies": {
@@ -28,6 +28,7 @@
   },
   "dependencies": {
     "@electron/remote": "^2.0.8",
+    "child_process": "^1.0.2",
     "electron-log": "^4.4.7",
     "node-powershell": "^5.0.1",
     "nodemailer": "^6.7.5"
